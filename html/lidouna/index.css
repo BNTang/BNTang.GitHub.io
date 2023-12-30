@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.grid {
+    margin: 20px auto;
+    max-width: 800px; /* Increased for better responsiveness */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    grid-gap: 15px;
+}
+
+.grid-item {
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 5px solid white;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.03) rotate(0); /* Scale up and straighten on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item.large {
+    grid-row-end: span 2; /* Larger images span two rows */
+}
+
+.grid-item.small {
+    grid-row-end: span 1; /* Smaller images span one row */
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.grid-item img:hover {
+    transform: scale(1.1); /* Zoom in on image on hover */
+}

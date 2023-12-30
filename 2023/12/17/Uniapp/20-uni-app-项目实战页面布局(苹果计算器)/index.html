@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head><!-- hexo injector head_begin start -->
+<script src="/config.5205e3d9b397161f1f71.js"></script>
+<!-- hexo injector head_begin end -->
+<meta charset="utf-8">
+<title>uni-app-项目实战页面布局(苹果计算器) - BNTang</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="http://example.com/2023/12/17/Uniapp/20-uni-app-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80(%E8%8B%B9%E6%9E%9C%E8%AE%A1%E7%AE%97%E5%99%A8)/">
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+<meta name="description" content="前言  经过前面的文章介绍，基本上 UniApp 的内容就介绍完毕了 那么从本文开始，我们就开始进行一个项目的实战 这次做的项目是苹果计算器，这个项目的难度不是很大，但是也不是很简单，适合练手  创建项目  打开 HBuilderX，点击左上角 文件 -&gt; 新建 -&gt; 项目：   搭建基本布局 项目创建完毕之后，首先来分析一下苹果计算器的整体布局结构，分为一上一下如下图：   上面的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="uni-app-项目实战页面布局(苹果计算器)">
+<meta property="og:url" content="http://example.com/2023/12/17/Uniapp/20-uni-app-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80(%E8%8B%B9%E6%9E%9C%E8%AE%A1%E7%AE%97%E5%99%A8)/index.html">
+<meta property="og:site_name" content="BNTang">
+<meta property="og:description" content="前言  经过前面的文章介绍，基本上 UniApp 的内容就介绍完毕了 那么从本文开始，我们就开始进行一个项目的实战 这次做的项目是苹果计算器，这个项目的难度不是很大，但是也不是很简单，适合练手  创建项目  打开 HBuilderX，点击左上角 文件 -&gt; 新建 -&gt; 项目：   搭建基本布局 项目创建完毕之后，首先来分析一下苹果计算器的整体布局结构，分为一上一下如下图：   上面的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/12/17/Uniapp/20-uni-app-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80(%E8%8B%B9%E6%9E%9C%E8%AE%A1%E7%AE%97%E5%99%A8)/images/avatar.png">
+<meta property="article:published_time" content="2023-12-17T10:03:34.000Z">
+<meta property="article:modified_time" content="2023-12-17T15:47:04.914Z">
+<meta property="article:author" content="BNTang">
+<meta property="article:tag" content="Uniapp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/12/17/Uniapp/20-uni-app-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80(%E8%8B%B9%E6%9E%9C%E8%AE%A1%E7%AE%97%E5%99%A8)/images/avatar.png">
+
+
+<!-- hexo injector head_end start --><style is="theme">html{--inside-accent-color:#2a2b33;--inside-foreground-color:#363636;--inside-border-color:#e0e0e0;--inside-background:#f3f6f7;--inside-sidebar-background:#2a2b33;--inside-card-background:#fff;--inside-font-base:'Josefin Sans','PingFang SC',Microsoft YaHei;--inside-font-logo:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;--inside-font-menu:Baloo Bhaijaan,'Josefin Sans','PingFang SC',Microsoft YaHei;--inside-font-heading:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;--inside-font-label:Montserrat,'Josefin Sans','PingFang SC',Microsoft YaHei;--inside-font-code:Inconsolata,monospace;--inside-font-print:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;--inside-content-width:640px;--inside-highlight-00:#ffffff;--inside-highlight-01:#e0e0e0;--inside-highlight-02:#d6d6d6;--inside-highlight-03:#8e908c;--inside-highlight-04:#969896;--inside-highlight-05:#4d4d4c;--inside-highlight-06:#282a2e;--inside-highlight-07:#1d1f21;--inside-highlight-08:#c82829;--inside-highlight-09:#f5871f;--inside-highlight-0a:#eab700;--inside-highlight-0b:#718c00;--inside-highlight-0c:#3e999f;--inside-highlight-0d:#4271ae;--inside-highlight-0e:#8959a8;--inside-highlight-0f:#a3685a;--inside-card-color:#fff;--inside-accent-color-005:rgba(42,43,51,.05);--inside-accent-color-01:rgba(42,43,51,.1);--inside-accent-color-02:rgba(42,43,51,.2);--inside-accent-color-04:rgba(42,43,51,.4);--inside-accent-color-08:rgba(42,43,51,.8)}</style><script src="/theme.9ecc9ab1.js"></script><link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet"></link><link href="/styles.91e7dfca63c7c151daa6.css" rel="stylesheet"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+<body lang="en"><!-- hexo injector body_begin start --><is-a></is-a><!-- hexo injector body_begin end --><!-- hexo injector body_end start --><script src="/runtime.1ed960b0635ea0669f87.js"></script><script src="/polyfills.b7bf56fc45f931a8b83e.js"></script><script src="/main.543c891b4aad158701f3.js"></script><!-- hexo injector body_end end --></body>
+</html>
